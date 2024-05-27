@@ -1,0 +1,46 @@
+.Home img {
+  width: 100%;
+}
+@font-face {
+  font-family: eshkol;
+  src: url(/src/Assets/fonts/comixno2clm_bold-webfont.woff);
+}
+
+p {
+  color: #7d5fb2;
+  text-decoration-line: none;
+  font-family: eshkol;
+  margin: 20px 0;
+  font-size: larger;
+}
+.Home .btn {
+  width: 9vh;
+  height: 9vh;
+  border-radius: 100%;
+}
+
+.Home .btn1 {
+  position: absolute;
+  top: 47.5vh;
+  left: 29vh;
+}
+.Home .btn2 {
+  position: absolute;
+  top: 47.5vh;
+  left: 20vh;
+}
+.Home .btn3 {
+  position: absolute;
+  top: 47.5vh;
+  left: 11vh;
+}
+.Home .btn4 {
+  position: absolute;
+  top: 54.7vh;
+  left: 15.5vh;
+}
+.Home .btn5 {
+  position: absolute;
+  top: 54.7vh;
+  left: 25vh;
+}

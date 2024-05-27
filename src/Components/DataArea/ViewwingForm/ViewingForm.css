@@ -1,0 +1,48 @@
+.ViewingForm h2 {
+  font-size: 4vh;
+  font-family: eshkol;
+  color: #7d5fb2;
+  margin: 30px;
+}
+.ViewingForm .button {
+  margin: 40px 0;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 24px;
+  font-size: 18px;
+  color: #7d5fb2;
+  border: 2px solid #7d5fb2;
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.ViewingForm .button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: #7d5fb2;
+  /* transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); */
+}
+
+.ViewingForm .button:hover::before {
+  scale: 3;
+}
+
+.ViewingForm .button:hover {
+  color: #212121;
+  scale: 1.01;
+  box-shadow: 0 0px 20px rgba(152, 98, 193, 0.4);
+}
+
+.ViewingForm .button:active {
+  scale: 1;
+}

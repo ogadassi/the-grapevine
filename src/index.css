@@ -1,0 +1,31 @@
+@font-face {
+  font-family: eshkol;
+  src: url(/src/Assets/fonts/comixno2clm_bold-webfont.woff);
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  text-align: center;
+  background-color: #b7decb;
+}
+header,
+main {
+  direction: rtl;
+}
+
+a {
+  color: #7d5fb2;
+  text-decoration-line: none;
+  font-family: eshkol;
+}
+
+
+.error {
+  color: red;
+  position: absolute;
+  margin-left: 20px;
+  width: 100%;
+}

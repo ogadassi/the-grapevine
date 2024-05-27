@@ -1,0 +1,154 @@
+@font-face {
+  font-family: eshkol;
+  src: url(/src/Assets/fonts/comixno2clm_bold-webfont.woff);
+}
+
+.GradingForm .button {
+  margin: 40px 0;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 24px;
+  font-size: 18px;
+  color: #7d5fb2;
+  border: 2px solid #7d5fb2;
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.GradingForm .button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: #7d5fb2;
+  /* transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); */
+}
+
+.GradingForm .button:hover::before {
+  scale: 3;
+}
+
+.GradingForm .button:hover {
+  color: #212121;
+  scale: 1.01;
+  box-shadow: 0 0px 20px rgba(152, 98, 193, 0.4);
+}
+
+.GradingForm .button:active {
+  scale: 1;
+}
+
+/* --------------------------------------------------------------- */
+
+.points {
+  font-family: eshkol;
+  color: #7d5fb2;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.cellName {
+  font-size: 6vh;
+  font-family: eshkol;
+  color: #7d5fb2;
+}
+.value {
+  font-size: 3.5vh;
+  font-family: eshkol;
+  color: #422c6c;
+}
+
+.checkbox-wrapper-16 .checkbox-label {
+  color: #707070;
+  transition: 0.375s ease;
+  text-align: center;
+}
+
+.checkbox-label {
+  font-size: 5vh;
+}
+
+/* ----------------------------------------------- */
+
+.wrapper {
+  margin: auto;
+  --font-color-dark: #2c1e42;
+  --font-color-light: #deb5ff;
+  --bg-color: #fff;
+  --main-color: #ad7fd5;
+  --secondary-color: #e3c4ff;
+  position: relative;
+  width: 250px;
+  height: 36px;
+  background-color: var(--bg-color);
+  border: 2px solid var(--main-color);
+  border-radius: 34px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 4px 4px var(--main-color);
+}
+
+.option {
+  margin-right: 5px;
+  width: 80.5px;
+  height: 28px;
+  position: relative;
+  top: 2px;
+  left: 2px;
+  border-radius: 34px;
+  transition: 0.25s cubic-bezier(0, 0, 0, 1);
+}
+
+.option:last-child {
+  margin-right: 4px;
+}
+
+.option:hover {
+  background-color: var(--secondary-color);
+}
+
+.option:hover .span {
+  color: var(--font-color-dark);
+}
+
+.GradingForm .input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  appearance: none;
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.span {
+  color: var(--font-color-dark);
+}
+
+.input:checked + .btn {
+  background-color: var(--main-color);
+  transition: 0.2s cubic-bezier(0, 0, 0, 1);
+}
+
+.input:checked + .btn .span {
+  color: var(--font-color-dark);
+  transition: 0.25s cubic-bezier(0, 0, 0, 1);
+}
