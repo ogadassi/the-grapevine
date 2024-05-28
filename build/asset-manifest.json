@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/home/static/css/main.665ff0bf.css",
-    "main.js": "/home/static/js/main.6213637f.js",
+    "main.js": "/home/static/js/main.7c45da10.js",
     "static/js/787.22a581b9.chunk.js": "/home/static/js/787.22a581b9.chunk.js",
     "static/media/האשכול3.png": "/home/static/media/האשכול3.7dacd7547d11a536d309.png",
     "static/media/האשכול.png": "/home/static/media/האשכול.99918ded08e11a6cdba7.png",
     "static/media/comixno2clm_bold-webfont.woff": "/home/static/media/comixno2clm_bold-webfont.616e65cebeac51ea31f6.woff",
     "index.html": "/home/index.html",
     "main.665ff0bf.css.map": "/home/static/css/main.665ff0bf.css.map",
-    "main.6213637f.js.map": "/home/static/js/main.6213637f.js.map",
+    "main.7c45da10.js.map": "/home/static/js/main.7c45da10.js.map",
     "787.22a581b9.chunk.js.map": "/home/static/js/787.22a581b9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.665ff0bf.css",
-    "static/js/main.6213637f.js"
+    "static/js/main.7c45da10.js"
   ]
 }
