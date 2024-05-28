@@ -12,20 +12,22 @@ function Routing(): JSX.Element {
     <div className="Routing">
       <Routes>
         {/* Home: */}
-        <Route path="/home" element={<Home />} />
+        <Route path="/the-grapevine/home" element={<Home />} />
 
         {/* List: */}
-        <Route path="/game-of-hukiyoot" element={<List />} />
+        <Route path="/the-grapevine/game-of-hukiyoot" element={<List />} />
 
         {/* Filling Form: */}
-        <Route path="/land-city" element={<Add />} />
+        <Route path="/the-grapevine/land-city" element={<Add />} />
 
         {/* Grading Form: */}
-        <Route path="/land-city/grading" element={<GradingForm />} />
+        <Route path="/the-grapevine/land-city/grading" element={<GradingForm />} />
 
         {/* Viewing Form: */}
-        <Route path="/land-city/viewing" element={<ViewingForm />} />
+        <Route path="/the-grapevine/land-city/viewing" element={<ViewingForm />} />
 
+        {/* Default Route: */}
+        <Route path="/the-grapevine/" element={<Navigate to="/home" />} />
         {/* Default Route: */}
         <Route path="/" element={<Navigate to="/home" />} />
 
