@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/home/static/css/main.665ff0bf.css",
-    "main.js": "/home/static/js/main.04296e7c.js",
-    "static/js/787.22a581b9.chunk.js": "/home/static/js/787.22a581b9.chunk.js",
-    "static/media/האשכול3.png": "/home/static/media/האשכול3.7dacd7547d11a536d309.png",
-    "static/media/האשכול.png": "/home/static/media/האשכול.99918ded08e11a6cdba7.png",
-    "static/media/comixno2clm_bold-webfont.woff": "/home/static/media/comixno2clm_bold-webfont.616e65cebeac51ea31f6.woff",
-    "index.html": "/home/index.html",
-    "main.665ff0bf.css.map": "/home/static/css/main.665ff0bf.css.map",
-    "main.04296e7c.js.map": "/home/static/js/main.04296e7c.js.map",
-    "787.22a581b9.chunk.js.map": "/home/static/js/787.22a581b9.chunk.js.map"
+    "main.css": "/the-grapevine/home/static/css/main.d774f44d.css",
+    "main.js": "/the-grapevine/home/static/js/main.f5f5547e.js",
+    "static/js/787.22a581b9.chunk.js": "/the-grapevine/home/static/js/787.22a581b9.chunk.js",
+    "static/media/האשכול3.png": "/the-grapevine/home/static/media/האשכול3.7dacd7547d11a536d309.png",
+    "static/media/האשכול.png": "/the-grapevine/home/static/media/האשכול.99918ded08e11a6cdba7.png",
+    "static/media/comixno2clm_bold-webfont.woff": "/the-grapevine/home/static/media/comixno2clm_bold-webfont.616e65cebeac51ea31f6.woff",
+    "index.html": "/the-grapevine/home/index.html",
+    "main.d774f44d.css.map": "/the-grapevine/home/static/css/main.d774f44d.css.map",
+    "main.f5f5547e.js.map": "/the-grapevine/home/static/js/main.f5f5547e.js.map",
+    "787.22a581b9.chunk.js.map": "/the-grapevine/home/static/js/787.22a581b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.665ff0bf.css",
-    "static/js/main.04296e7c.js"
+    "static/css/main.d774f44d.css",
+    "static/js/main.f5f5547e.js"
   ]
 }
