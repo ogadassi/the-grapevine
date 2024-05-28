@@ -39,7 +39,7 @@ function Header() {
         <Toolbar disableGutters>
           <Typography
             component="a"
-            href="/home"
+            href="/the-grapevine"
             sx={{
               display: { xs: "flex", md: "none" },
               flexGrow: 1,

@@ -18,7 +18,7 @@ function Add(): JSX.Element {
     // Retrieve auth status from localStorage
     const storedAuth = localStorage.getItem("blueGrapes");
     if (!auth && storedAuth !== "true") {
-      navigate("/home");
+      navigate("/the-grapevine");
     }
   }, []);
 
