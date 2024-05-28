@@ -14,11 +14,14 @@ p {
   font-size: larger;
 }
 .Home .btn {
-  width: 9vh;
-  height: 9vh;
+  width: 11vh;
+  height: 11vh;
   border-radius: 100%;
+  outline: none;
 }
-
+.Home .btn:active {
+  border: 10px dashed rgba(255, 0, 0, 0); /* Custom outline style */
+}
 .Home .btn1 {
   position: absolute;
   top: 47.5vh;
