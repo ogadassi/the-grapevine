@@ -12,7 +12,7 @@ function Routing(): JSX.Element {
     <div className="Routing">
       <Routes>
         {/* Home: */}
-        <Route path="/home" element={<Home />} />
+        <Route path="/the-grapevine" element={<Home />} />
 
         {/* List: */}
         <Route path="/game-of-hukiyoot" element={<List />} />
@@ -21,24 +21,15 @@ function Routing(): JSX.Element {
         <Route path="/land-city" element={<Add />} />
 
         {/* Grading Form: */}
-        <Route
-          path="/land-city/grading"
-          element={<GradingForm />}
-        />
+        <Route path="/land-city/grading" element={<GradingForm />} />
 
         {/* Viewing Form: */}
-        <Route
-          path="/land-city/viewing"
-          element={<ViewingForm />}
-        />
+        <Route path="/land-city/viewing" element={<ViewingForm />} />
 
         {/* Default Route: */}
-        <Route
-          path="/"
-          element={<Navigate to="/home" />}
-        />
+        <Route path="/home" element={<Navigate to="/the-grapevine" />} />
         {/* Default Route: */}
-        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/" element={<Navigate to="/the-grapevine" />} />
 
         {/* Page not found route: */}
         <Route path="*" element={<Page404 />} />
