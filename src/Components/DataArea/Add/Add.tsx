@@ -1,6 +1,6 @@
+import "./Add.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Add.css";
 import { useSelector } from "react-redux";
 import { AppState } from "../../../Redux/AppState";
 import { notify } from "../../../Utils/Notify";
@@ -54,10 +54,10 @@ function Add(): JSX.Element {
 
   function send(form: FormModel) {
     try {
-      console.log(form);
+      //   console.log(form);
       localStorage.setItem("form", JSON.stringify(form));
-      notify.success("works");
-        navigate("/land-city/grading");
+      //   notify.success("works");
+      navigate("/land-city/grading");
     } catch (err: any) {
       notify.error(err);
     }
