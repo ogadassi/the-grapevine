@@ -22,10 +22,12 @@ a {
   font-family: eshkol;
 }
 
-
 .error {
   color: red;
   position: absolute;
   margin-left: 20px;
   width: 100%;
+}
+::-webkit-scrollbar {
+  display: none;
 }

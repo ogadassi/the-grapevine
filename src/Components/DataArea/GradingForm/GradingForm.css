@@ -4,7 +4,7 @@
 }
 
 .GradingForm .button {
-  margin: 40px 0;
+  margin: 0;
   cursor: pointer;
   position: relative;
   padding: 10px 24px;
@@ -16,6 +16,20 @@
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   overflow: hidden;
+}
+.GradingForm .navBtn {
+  margin: 0;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+.GradingForm .endBtn {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .GradingForm .button::before {
@@ -57,11 +71,21 @@
   transform: translate(-50%);
 }
 .cellName {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
   font-size: 6vh;
   font-family: eshkol;
   color: #7d5fb2;
 }
 .value {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
   font-size: 3.5vh;
   font-family: eshkol;
   color: #422c6c;
@@ -80,13 +104,17 @@
 /* ----------------------------------------------- */
 
 .wrapper {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
   margin: auto;
   --font-color-dark: #2c1e42;
   --font-color-light: #deb5ff;
   --bg-color: #fff;
   --main-color: #ad7fd5;
   --secondary-color: #e3c4ff;
-  position: relative;
   width: 250px;
   height: 36px;
   background-color: var(--bg-color);

@@ -60,24 +60,26 @@ function GradingForm(): JSX.Element {
       <h1 className="cellName">{cells[index]}</h1>
       <br />
       <h2 className="value">{formArr[index] ? formArr[index].value : "ריק"}</h2>
-      <button
-        className="button"
-        onClick={() => {
-          index > 0 ? setIndex(index - 1) : setIndex(cells.length - 1);
-        }}
-      >
-        הקודם
-      </button>
-      <button
-        className="button"
-        onClick={() => {
-          index >= 0 && index < cells.length - 1
-            ? setIndex(index + 1)
-            : setIndex(0);
-        }}
-      >
-        הבא
-      </button>
+      <div className="navBtn">
+        <button
+          className="button"
+          onClick={() => {
+            index > 0 ? setIndex(index - 1) : setIndex(cells.length - 1);
+          }}
+        >
+          הקודם
+        </button>
+        <button
+          className="button"
+          onClick={() => {
+            index >= 0 && index < cells.length - 1
+              ? setIndex(index + 1)
+              : setIndex(0);
+          }}
+        >
+          הבא
+        </button>
+      </div>
       <br />
       {formArr[index]?.value !== "ריק" ? (
         <div className="wrapper">
@@ -139,7 +141,7 @@ function GradingForm(): JSX.Element {
       {formArr[index]?.cell === "quote" ? (
         <button
           onClick={() => navigate("/land-city/viewing")}
-          className="button"
+          className="button endBtn"
         >
           סיום
         </button>

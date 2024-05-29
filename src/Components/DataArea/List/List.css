@@ -1,3 +1,28 @@
 .List {
-	
+}
+.sendButton {
+  font-size: 16px;
+  position: relative;
+  margin: auto;
+  margin-top: 15px;
+  padding: 1em 2.5em 1em 2.5em;
+  border: none;
+  background: #d4c5ff;
+  transition: all 0.1s linear;
+  box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+  font-family: eshkol;
+  color: #6c37c9;
+  border-radius: 30px;
+}
+
+.sendButton:active {
+  transform: scale(0.95);
+}
+
+.sendButton span {
+  color: #473b47;
+}
+
+.full-rounded {
+  border-radius: 2em;
 }

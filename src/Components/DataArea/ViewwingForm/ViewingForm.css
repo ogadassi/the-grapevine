@@ -1,11 +1,15 @@
+.ViewingForm {
+  overflow: hidden;
+}
+
 .ViewingForm h2 {
   font-size: 4vh;
   font-family: eshkol;
   color: #7d5fb2;
-  margin: 30px;
+  margin: 0;
+  margin-top: 1vh;
 }
 .ViewingForm .button {
-  margin: 40px 0;
   cursor: pointer;
   position: relative;
   padding: 10px 24px;
@@ -17,6 +21,7 @@
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   overflow: hidden;
+  margin-top: 1vh;
 }
 
 .ViewingForm .button::before {
@@ -45,4 +50,21 @@
 
 .ViewingForm .button:active {
   scale: 1;
+}
+
+table {
+  font-family: eshkol;
+  color: #7d5fb2;
+  background-color: #ffffff7b;
+  margin: auto;
+  border-radius: 10px;
+}
+
+th,
+td {
+  padding: 4px;
+}
+td {
+  border-top: 1px solid;
+  border-top: 1px solid;
 }
