@@ -8,8 +8,7 @@ function List(): JSX.Element {
   let whereInAnswer = [
     "לכלול בתחילת התשובה",
     "לכלול איפשהו בתשובה",
-    "לכלול בסוף התשובה",
-    "לכלול במיקום ה",
+    `לכלול בסוף התשובה`,
   ];
 
   const whatToInclude = [
