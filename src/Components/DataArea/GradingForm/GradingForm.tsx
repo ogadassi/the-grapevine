@@ -8,6 +8,7 @@ function GradingForm(): JSX.Element {
   const [pointSum, setPointSum] = useState<number>(0);
   const [index, setIndex] = useState<number>(0);
   const [formArr, setFormArr] = useState<{ cell: string; value: string }[]>([]);
+
   const cells = [
     "שם שבא לך לתת לו בוקס",
     "גוף מים",
@@ -36,7 +37,9 @@ function GradingForm(): JSX.Element {
     const savedScores = JSON.parse(
       localStorage.getItem("selectedOptions") || "[]"
     );
-    setSelectedOptions(savedScores);
+    const initializedScores = cells.map((_, idx) => savedScores[idx] ?? "0");
+    setSelectedOptions(initializedScores);
+    localStorage.setItem("selectedOptions", JSON.stringify(initializedScores));
   }, []);
 
   useEffect(() => {
