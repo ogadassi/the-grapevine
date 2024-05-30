@@ -5,63 +5,121 @@ import { AppState } from "../../../Redux/AppState";
 import { useNavigate } from "react-router-dom";
 
 function List(): JSX.Element {
-  let whereInAnswer = [
-    "לכלול בתחילת התשובה",
-    "לכלול איפשהו בתשובה",
-    `לכלול בסוף התשובה`,
-  ];
+  const [ruleString, setRuleString] = useState<string>();
 
-  const whatToInclude = [
-    `צריך ${
-      whereInAnswer[Math.floor(Math.random() * whereInAnswer.length)]
-    } את האות הראשונה של השאלה`,
-    `צריך ${
-      whereInAnswer[Math.floor(Math.random() * whereInAnswer.length)]
-    } את האות האחרונה של השאלה`,
-    `צריך ${
-      whereInAnswer[Math.floor(Math.random() * whereInAnswer.length)]
-    } את המילה הראשונה של השאלה`,
-    `צריך ${
-      whereInAnswer[Math.floor(Math.random() * whereInAnswer.length)]
-    } את המילה האחרונה של השאלה`,
-  ];
+  function getTrigger(): string {
+    const triggers = [
+      "השואל מציין מאכל",
+      "נשאלת שאלה",
+      "נשאלת שאלה עם האות {letter}",
+      "השואל משנה תנוחה",
+      "{player} משנה תנוחה",
+    ];
 
-  //   const behaviors = [
-  //     "לענות כאילו אנחנו במאה ה-17",
-  //     "לענות בסגנון מדעי",
-  //     "לענות בסגנון הומוריסטי",
-  //     "לענות בשפה גבוהה",
-  //     "לשנות תנוחה בכל פעם שנשאלים",
-  //   ];
+    return triggers[Math.floor(Math.random() * triggers.length)];
+  }
+  function getPlayer(): string {
+    const players = [
+      "הנשאל",
+      "האדם הבא בסבב",
+      "האדם מימין לנשאל",
+      "האדם משמאל לנשאל",
+      "האדם ש{player} מסתכל עליו",
 
-  //   const specificTriggers = [
-  //     "אם השאלה מכילה את האות 'א'",
-  //     "אם השאלה מכילה מילה מסוימת",
-  //     "אם השאלה מתחילה באות מסוימת",
-  //     "אם השאלה מסתיימת במילה מסוימת",
-  //   ];
+      "עומרי",
+      "רז",
+      "אביאני",
+      "בני",
+      "לנציאנו",
+      "שני",
+      "ליצ'י",
+      "שמעיה",
+      "רון",
+      "קשפיץ",
+      "גדסי",
+      "{player} ו{player}",
+    ];
+    return players[Math.floor(Math.random() * players.length)];
+  }
+  function getAction(): string {
+    const actions = [
+      "לענות עם מספר המילים שהיו בשאלה",
+      "לענות כאילו {player} הביא לו ג'וינט",
+      "לקבל אישיות של חייזר שלא יודע איך הוא הגיע לנקודה הזו ומנסה להשתלב כל שניתן",
+      "לענות עם האות {letter} במילה ה{number} בתשובה",
+      "לענות כשמספר המילים בתשובה הוא {number}",
+      "לענות כשמספר ההברות בתשובה הוא {number}",
+      "לענות כשמספר האותיות בתשובה הוא {number}",
+      "{action}, בצעקות",
+      "{action}, בלחישות",
+      "{action}, בעברית תנ''כית",
+      "{action}, כאילו אנחנו במאה ה-1{number}",
+      "לענות ללא האות {letter}",
+      "אסור {action}",
+    ];
+    return actions[Math.floor(Math.random() * actions.length)];
+  }
 
-  //   const actions = [
-  //     "לשנות תנוחה",
-  //     "להגיד משפט מסוים",
-  //     "לעשות תנועה מסוימת",
-  //     "להשתמש במילה ספציפית בתשובה",
-  //   ];
+  function getNumber(): string {
+    const number = Math.floor(Math.random() * 9) + 1;
+    return `${number}`;
+  }
 
-  function generateLegality() {
-    const condition =
-      whatToInclude[Math.floor(Math.random() * whatToInclude.length)];
-    // const behavior = behaviors[Math.floor(Math.random() * behaviors.length)];
-    // const specificTrigger =
-    //   specificTriggers[Math.floor(Math.random() * specificTriggers.length)];
-    // const action = actions[Math.floor(Math.random() * actions.length)];
+  function getLetter(): string {
+    const hebrewAlphabet = [
+      "א",
+      "ב",
+      "ג",
+      "ד",
+      "ה",
+      "ו",
+      "ז",
+      "ח",
+      "ט",
+      "י",
+      "כ",
+      "ל",
+      "מ",
+      "נ",
+      "ס",
+      "ע",
+      "פ",
+      "צ",
+      "ק",
+      "ר",
+      "ש",
+      "ת",
+    ];
+    return `'${
+      hebrewAlphabet[Math.floor(Math.random() * hebrewAlphabet.length)]
+    }'`;
+  }
 
-    setRuleString(`חוקיות חדשה: ${condition}`);
+  function generateRule() {
+    setRuleString(resolveRule(` כל פעם ש{trigger}, על {player} {action}.`));
+  }
+
+  function resolveRule(ruleStr: string): string {
+    const symbols: { [key: string]: Function } = {
+      "{trigger}": getTrigger,
+      "{player}": getPlayer,
+      "{action}": getAction,
+      "{number}": getNumber,
+      "{letter}": getLetter,
+    };
+    for (const symbol in symbols) {
+      while (ruleStr.includes(symbol)) {
+        ruleStr = ruleStr.replace(symbol, symbols[symbol]());
+      }
+    }
+    for (const symbol in symbols) {
+      if (ruleStr.includes(symbol)) return resolveRule(ruleStr);
+    }
+    return ruleStr;
   }
 
   const navigate = useNavigate();
   const auth = useSelector<AppState>((AppState) => AppState.auth);
-  const [ruleString, setRuleString] = useState<string>();
 
   useEffect(() => {
     // Retrieve auth status from localStorage
@@ -71,10 +129,9 @@ function List(): JSX.Element {
     }
   }, []);
 
-  function makeRuleString() {}
   return (
     <div className="List">
-      <button onClick={generateLegality} className="sendButton">
+      <button onClick={generateRule} className="sendButton">
         תן לי חוקיות רנדומלית
       </button>
       <h2>{ruleString}</h2>
