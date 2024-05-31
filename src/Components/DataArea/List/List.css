@@ -1,8 +1,23 @@
-.List {
+/* @font-face {
+  font-family: eshkol;
+  src: url(/src/Assets/fonts/comixno2clm_bold-webfont.woff);
+} */
+
+.List h2 {
+  font-family: eshkol;
+  color: #70569e;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
 }
 .sendButton {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 16px;
-  position: relative;
   margin: auto;
   margin-top: 15px;
   padding: 1em 2.5em 1em 2.5em;
@@ -13,10 +28,11 @@
   font-family: eshkol;
   color: #6c37c9;
   border-radius: 30px;
+  width: 70%;
 }
 
 .sendButton:active {
-  transform: scale(0.95);
+  transform: translate(-50%, -50%) scale(0.95);
 }
 
 .sendButton span {
