@@ -5,7 +5,7 @@ import { AppState } from "../../../Redux/AppState";
 import { useNavigate } from "react-router-dom";
 
 function List(): JSX.Element {
-//   let clicks = 0;
+  //   let clicks = 0;
   const [ruleString, setRuleString] = useState<string>();
 
   function getTrigger(): string {
@@ -149,12 +149,15 @@ function List(): JSX.Element {
     }`;
   }
 
-  function generateRule() {
+  // gets rule to react webpage
+  function getRule() {
     setRuleString(resolveRule(` כל פעם ש{trigger}, על {player} {action}.`));
     // limitClicks();
   }
 
+  //   creates rule string
   function resolveRule(ruleStr: string): string {
+    // object matching strings (symbols) to their functions
     const symbols: { [key: string]: Function } = {
       "{trigger}": getTrigger,
       "{player}": getPlayer,
@@ -162,11 +165,17 @@ function List(): JSX.Element {
       "{number}": getNumber,
       "{letter}": getLetter,
     };
+
+    // going over functions object.
+    // checking per symbol if ruleStr contains it, and if so- replacing it.
     for (const symbol in symbols) {
       while (ruleStr.includes(symbol)) {
         ruleStr = ruleStr.replace(symbol, symbols[symbol]());
       }
     }
+
+    // since some functions will return a string that has a symbol,
+    // this loop calls the resolveRule recursively to get all symbols replaced.
     for (const symbol in symbols) {
       if (ruleStr.includes(symbol)) return resolveRule(ruleStr);
     }
@@ -186,13 +195,13 @@ function List(): JSX.Element {
     // Retrieve auth status from localStorage
     const storedAuth = localStorage.getItem("blueGrapes");
     if (!auth && storedAuth !== "true") {
-      navigate("the-grapevine");
+      navigate("/the-grapevine");
     }
   }, []);
 
   return (
     <div className="List">
-      <button onClick={generateRule} className="sendButton">
+      <button onClick={getRule} className="sendButton">
         תן לי חוקיות רנדומלית
       </button>
       <h2>{ruleString}</h2>
