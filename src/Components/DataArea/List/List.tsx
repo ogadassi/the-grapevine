@@ -58,7 +58,7 @@ function List(): JSX.Element {
     return triggers[Math.floor(Math.random() * triggers.length)];
   }
   function getPlayer(): string {
-    const players = [
+    const defaultPlayers = [
       "הנשאל",
       "הנשאל הקודם",
       "האדם הבא בסבב",
@@ -68,12 +68,13 @@ function List(): JSX.Element {
       "{player} ו{player}",
     ];
 
-    if (Math.random() < 0.9)
-      return players[Math.floor(Math.random() * players.length)];
-    else
+    if (Math.random() < 0.9 || singularPlayers.length === 0) {
+      return defaultPlayers[Math.floor(Math.random() * defaultPlayers.length)];
+    } else {
       return singularPlayers[
         Math.floor(Math.random() * singularPlayers.length)
       ];
+    }
   }
   function getAction(): string {
     const actions = [
