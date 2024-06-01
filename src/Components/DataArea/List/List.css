@@ -12,7 +12,7 @@
   transform: translate(-50%, -50%);
   width: 90%;
 }
-.sendButton {
+.List .sendButton {
   position: absolute;
   bottom: 15%;
   left: 50%;
@@ -31,14 +31,14 @@
   width: 70%;
 }
 
-.sendButton:active {
+.List .sendButton:active {
   transform: translate(-50%, -50%) scale(0.95);
 }
 
-.sendButton span {
+.List .sendButton span {
   color: #473b47;
 }
 
-.full-rounded {
+.List .full-rounded {
   border-radius: 2em;
 }

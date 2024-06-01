@@ -5,7 +5,7 @@ import { AppState } from "../../../Redux/AppState";
 import { useNavigate } from "react-router-dom";
 
 function List(): JSX.Element {
-  let clicks = 0;
+//   let clicks = 0;
   const [ruleString, setRuleString] = useState<string>();
 
   function getTrigger(): string {
