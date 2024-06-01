@@ -38,8 +38,8 @@ function Header() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            component="a"
-            href="/the-grapevine"
+            component={NavLink}
+            to="/the-grapevine"
             sx={{
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
@@ -58,11 +58,23 @@ function Header() {
             />
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, alignItems:'center', justifyContent:'' }}>
+            <Box
+              component="img"
+              sx={{
+                mt: 1,
+                mb: 1,
+                height: 60,
+                width: 160,
+              }}
+              alt="logo"
+              src={imgSrc}
+            />
             {pages.map((page) => (
               <Button
                 key={page.text}
-                onClick={handleCloseNavMenu}
+                component={NavLink}
+                to={page.url}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page.text}
