@@ -7,7 +7,7 @@
   font-family: eshkol;
   color: #70569e;
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
@@ -41,4 +41,35 @@
 
 .List .full-rounded {
   border-radius: 2em;
+}
+
+/* --------------------------- */
+
+.players {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.players input[type="checkbox"] {
+  display: none;
+}
+
+.players label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 185, 234);
+  border: #9e569e solid 2px;
+  margin: 2px;
+  width: 8vh;
+  height: 8vh;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.players label.checked {
+  background-color: rgb(185, 185, 255);
+  border: #56649e solid 2px;
 }

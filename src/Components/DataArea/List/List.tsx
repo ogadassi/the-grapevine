@@ -5,8 +5,45 @@ import { AppState } from "../../../Redux/AppState";
 import { useNavigate } from "react-router-dom";
 
 function List(): JSX.Element {
+  const players = [
+    "ליצ'י",
+    "גדסי",
+    "שמעיה",
+    "לנציאנו",
+    "רז",
+    "בני",
+    "אביאני",
+    "קשפיץ",
+    "עומרי",
+    "רון",
+    "שני",
+  ];
+
   //   let clicks = 0;
+
   const [ruleString, setRuleString] = useState<string>();
+  const [singularPlayers, setSingularPlayers] = useState<string[]>(players);
+  const [checkedStates, setCheckedStates] = useState<boolean[]>(
+    Array(11).fill(true)
+  );
+
+  const handleChange = (index: number) => {
+    const newCheckedStates = [...checkedStates];
+    newCheckedStates[index] = !newCheckedStates[index];
+    setCheckedStates(newCheckedStates);
+
+    if (newCheckedStates[index]) {
+      setSingularPlayers([...singularPlayers, players[index]]);
+    } else {
+      setSingularPlayers(
+        singularPlayers.filter((player) => player !== players[index])
+      );
+    }
+  };
+
+  useEffect(() => {
+    console.log(singularPlayers);
+  }, [singularPlayers]);
 
   function getTrigger(): string {
     const triggers = [
@@ -30,19 +67,7 @@ function List(): JSX.Element {
       "האדם ש{player} מסתכל עליו",
       "{player} ו{player}",
     ];
-    const singularPlayers = [
-      "עומרי",
-      "רז",
-      "אביאני",
-      "בני",
-      "לנציאנו",
-      "שני",
-      "ליצ'י",
-      "שמעיה",
-      "רון",
-      "קשפיץ",
-      "גדסי",
-    ];
+
     if (Math.random() < 0.9)
       return players[Math.floor(Math.random() * players.length)];
     else
@@ -201,10 +226,24 @@ function List(): JSX.Element {
 
   return (
     <div className="List">
+      <h2>{ruleString}</h2>
       <button onClick={getRule} className="sendButton">
         תן לי חוקיות רנדומלית
       </button>
-      <h2>{ruleString}</h2>
+      <div className="players">
+        {players.map((player, index) => (
+          <div key={index}>
+            <label className={checkedStates[index] ? "checked" : ""}>
+              <input
+                type="checkbox"
+                checked={checkedStates[index]}
+                onChange={() => handleChange(index)}
+              />
+              {player}
+            </label>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
