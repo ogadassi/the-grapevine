@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/the-grapevine/static/css/main.d2d4aa63.css",
-    "main.js": "/the-grapevine/static/js/main.7dc3019e.js",
+    "main.css": "/the-grapevine/static/css/main.d789e25d.css",
+    "main.js": "/the-grapevine/static/js/main.794031ab.js",
     "static/js/787.22a581b9.chunk.js": "/the-grapevine/static/js/787.22a581b9.chunk.js",
     "static/media/האשכול3.png": "/the-grapevine/static/media/האשכול3.7dacd7547d11a536d309.png",
     "static/media/האשכול.png": "/the-grapevine/static/media/האשכול.99918ded08e11a6cdba7.png",
     "static/media/comixno2clm_bold-webfont.woff": "/the-grapevine/static/media/comixno2clm_bold-webfont.616e65cebeac51ea31f6.woff",
     "index.html": "/the-grapevine/index.html",
-    "main.d2d4aa63.css.map": "/the-grapevine/static/css/main.d2d4aa63.css.map",
-    "main.7dc3019e.js.map": "/the-grapevine/static/js/main.7dc3019e.js.map",
+    "main.d789e25d.css.map": "/the-grapevine/static/css/main.d789e25d.css.map",
+    "main.794031ab.js.map": "/the-grapevine/static/js/main.794031ab.js.map",
     "787.22a581b9.chunk.js.map": "/the-grapevine/static/js/787.22a581b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2d4aa63.css",
-    "static/js/main.7dc3019e.js"
+    "static/css/main.d789e25d.css",
+    "static/js/main.794031ab.js"
   ]
 }
