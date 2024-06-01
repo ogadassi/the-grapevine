@@ -1,55 +1,34 @@
-import "./Home.css";
-import imgSrc from "../../../Assets/Images/האשכול.png";
 import React, { useEffect, useState } from "react";
 import { authActionCreators } from "../../../Redux/AuthSlice";
 import { appStore } from "../../../Redux/Store";
+import imgSrc from "../../../Assets/Images/האשכול.png";
+import "./Home.css";
 
 function Home(): JSX.Element {
-  // Initialize blueGrapes from localStorage
   const initialBlueGrapes = JSON.parse(
     localStorage.getItem("blueGrapes") || "false"
   );
   const [blueGrapes, setBlueGrapes] = useState(initialBlueGrapes);
 
-  // Initialize welcomeStr from localStorage
   const initialWelcomeStr =
     localStorage.getItem("welcomeStr") || "אנא אשרו שהנכם אשכוליאנים";
   const [welcomeStr, setWelcomeStr] = useState<string>(initialWelcomeStr);
 
-  //   change welcomeStr back if unauthorized
+  const [buttonsState, setButtonsState] = useState({
+    btn1: false,
+    btn2: false,
+    btn3: false,
+    btn4: false,
+    btn5: false,
+  });
+
   useEffect(() => {
     if (!blueGrapes) {
-      localStorage.setItem("welcomeStr", "אנא אשרו שהנכם אשכוליאנים");
-      setWelcomeStr("אנא אשרו שהנכם אשכוליאנים");
+      const defaultWelcomeStr = "אנא אשרו שהנכם אשכוליאנים";
+      localStorage.setItem("welcomeStr", defaultWelcomeStr);
+      setWelcomeStr(defaultWelcomeStr);
     }
-  }, []);
-
-  // State for each button
-  const [btn1, setBtn1] = useState(false);
-  const [btn2, setBtn2] = useState(false);
-  const [btn3, setBtn3] = useState(false);
-  const [btn4, setBtn4] = useState(false);
-  const [btn5, setBtn5] = useState(false);
-
-  function flick(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    switch (event.currentTarget.name) {
-      case "btn1":
-        setBtn1(true);
-        break;
-      case "btn2":
-        setBtn2(true);
-        break;
-      case "btn3":
-        setBtn3(true);
-        break;
-      case "btn4":
-        setBtn4(true);
-        break;
-      case "btn5":
-        setBtn5(true);
-        break;
-    }
-  }
+  }, [blueGrapes]);
 
   useEffect(() => {
     localStorage.setItem("blueGrapes", JSON.stringify(blueGrapes));
@@ -57,13 +36,22 @@ function Home(): JSX.Element {
   }, [blueGrapes]);
 
   useEffect(() => {
-    if (btn1 && btn2 && btn3 && btn4 && btn5) {
+    if (Object.values(buttonsState).every(Boolean)) {
       setBlueGrapes(true);
       appStore.dispatch(authActionCreators.register(true));
-      localStorage.setItem("welcomeStr", "ענבים כחולים?!?");
-      setWelcomeStr("ענבים כחולים?!?");
+      const newWelcomeStr = "ענבים כחולים?!?";
+      localStorage.setItem("welcomeStr", newWelcomeStr);
+      setWelcomeStr(newWelcomeStr);
     }
-  }, [btn1, btn2, btn3, btn4, btn5]);
+  }, [buttonsState]);
+
+  const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const { name } = event.currentTarget;
+    setButtonsState((prevState) => ({
+      ...prevState,
+      [name]: true,
+    }));
+  };
 
   return (
     <div className="Home">
@@ -72,13 +60,34 @@ function Home(): JSX.Element {
         <br />
         {welcomeStr}
       </p>
-      <img src={imgSrc} alt="אשכול" />
-
-      <button name="btn1" className="btn btn1" onClick={flick}></button>
-      <button name="btn2" className="btn btn2" onClick={flick}></button>
-      <button name="btn3" className="btn btn3" onClick={flick}></button>
-      <button name="btn4" className="btn btn4" onClick={flick}></button>
-      <button name="btn5" className="btn btn5" onClick={flick}></button>
+      <div className="button-container">
+        <img src={imgSrc} alt="אשכול" />
+        <button
+          name="btn1"
+          className="btn btn1"
+          onClick={handleButtonClick}
+        ></button>
+        <button
+          name="btn2"
+          className="btn btn2"
+          onClick={handleButtonClick}
+        ></button>
+        <button
+          name="btn3"
+          className="btn btn3"
+          onClick={handleButtonClick}
+        ></button>
+        <button
+          name="btn4"
+          className="btn btn4"
+          onClick={handleButtonClick}
+        ></button>
+        <button
+          name="btn5"
+          className="btn btn5"
+          onClick={handleButtonClick}
+        ></button>
+      </div>
     </div>
   );
 }
